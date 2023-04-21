@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>Colour Genie</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width= device-width, initial-scale= 1">
         <link rel="stylesheet" href="normalize.css">
         <link rel="stylesheet" href="styles.css">
@@ -26,18 +27,20 @@
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <button class="menu__button">UPLOAD IMAGE</button>
+                       <button class="button upload__button"> <label for="image__input" >Upload Image</label></button>
                     </li>
+                    
 
-                    <div class="icons__container">
+
+                    <div class="sun-moon__container">
                         <li class="menu__item">
-                            <div class="icon moon__icon">
+                            <div class="sun-moon__icons moon__icon">
                                 <i class="fa-solid fa-moon"></i>
                             </div>
                         </li>
 
                         <li class="menu__item">
-                            <div class="icon sun__icon">
+                            <div class="sun-moon__icons sun__icon">
                                 <i class="fa-solid fa-sun"></i>
                             </div>
                         </li>
@@ -45,6 +48,37 @@
                 </ul>
             </nav>
         </header>
+
+
+
+        <main class="main">
+
+            <div class="main__intro">
+                <h2 class="description__title"></h2>
+                <p class="main__description">Upload an image or demo our selection  to generate a colour palette</p>
+                <input 
+                class="input" 
+                id="image__input" 
+                type="file" 
+                accept="image/*, pdf">
+            </div>
+
+            <div class="main__image">
+
+                <div class="image__preview">
+                    <img class="preview__file"src="img/flower.webp">
+                </div>
+
+                <div class="palette__preview">
+                    <div class="colour-code colour-code1"><p>#84E556</p></div>
+                    <div class="colour-code colour-code2"><p>#295FA3</p></div>
+                    <div class="colour-code colour-code3"><p>#92238D</p></div>
+                    <div class="colour-code colour-code4"><p>#614312</p></div>
+                </div>
+
+                <button class="button demo__button">Demo Images</button>
+            </div>
+        </main>
 
 
     <script src="script.js"></script>
