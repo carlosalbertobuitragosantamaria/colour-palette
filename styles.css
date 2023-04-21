@@ -1,0 +1,262 @@
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F0F0F0;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ////////////////// *** HEADER **** /////////////////// */
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+}
+
+
+.logo__img {
+    max-width: 6%;
+}
+
+.title__main {
+    font-size: 4rem;
+    color: #295fa3;
+    margin: 0;
+    text-align: center;
+}
+
+.upload__button,
+.button {
+    font-weight: 600;
+    padding: .5rem 1rem;
+    background-color: #295fa3;
+    color: #F0F0F0;
+    outline: none;
+    border-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* animation */
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: #84e556;
+    color: #295fa3;
+    font-weight: 800;
+}
+
+
+.menu__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    gap: 2rem;
+    
+}
+/* /////////////// *** DARK MODE *** ///////////////// */
+.sun-moon__container {
+    position: relative;
+    cursor: pointer;
+}
+.fa-solid {
+    font-size: 2.5rem;
+}
+.sun-moon__icons {
+    color: #295fa3;
+
+}
+
+
+
+/* .moon__icon {
+    position: absolute;
+} */
+
+.sun__icon {
+    opacity: 0;
+    transform: translateY(-10%) translateX(10%) rotateZ(80deg);
+    transition: all 1s ease-out;
+}
+
+.moon__icon {
+    position: absolute;
+    opacity: 1;
+    transform: translateY(0) rotateZ(0deg);
+    transition: all 1s ease-out;
+}
+
+.animate-moon {
+    opacity: 0;
+    transform: translateY(20%) rotateZ(100deg);
+}
+
+.animate-sun {
+    opacity: 1;
+    transform: translateY(0%) rotateZ(0deg);
+}
+
+body {
+    transition: background-color 1s;
+}
+
+.dark-mode {
+    background-color: #2f3033;
+    color: #F0F0F0;
+}
+
+
+/* /////////////// *** MAIN *** //////////////// */
+
+.main {
+    display: flex;
+    margin: 6rem 3rem;
+}
+
+.main__intro {
+    align-items: center;
+    display: flex;
+    margin-left: 1rem;
+}
+.main__description {
+    font-size: 2rem;
+}
+.input {
+    display: none;
+}
+
+.main__image {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+}
+.image__preview {
+    
+
+}
+
+.preview__file {
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.demo__button {
+    margin-top: 1rem;
+    align-self: flex-start;
+
+}
+
+
+/* //////////////// *** COLOUR PALETTE *** /////////////// */
+
+.palette__preview {
+    display: flex;
+    border-radius: 8px;
+    padding-top: .1rem;
+
+}
+
+.colour-code {
+    flex-grow: 1;
+    padding-left: .5rem;
+    height: 15vw;
+    display: flex;
+    align-items: flex-end;
+}
+
+.colour-code p {
+    letter-spacing: .1rem ;
+    font-weight: 400;
+}
+
+.colour-code__dark {
+    /* color: #000; */
+    text-shadow: 1px 1px 8px #4f504e, -1px -1px 8px #4f504e;
+}
+.colour-code1 {
+    text-shadow: 1px 1px 8px #9fd292, -1px -1px 8px #9fd292;
+    background-color: #84e556;
+    border-radius: 0 0 0 8px;
+}
+
+.colour-code2 {
+    text-shadow: 1px 1px 8px #6f9bd2, -1px -1px 8px #6f9bd2;
+    background-color: #295fa3;
+}
+.colour-code3 {
+    text-shadow: 1px 1px 8px #c670c1, -1px -1px 8px #c670c1;
+    background-color: #92238d;
+}
+.colour-code4 {
+    text-shadow: 1px 1px 8px #997845, -1px -1px 8px #997845;
+    background-color: #614312;
+    border-radius: 0 0 8px 0;
+}
+
+
+
+
+/* //////////////// *** MOBILE VIEW *** //////////////////////// */
+@media screen and (max-width: 800px) {
+
+    .fa-solid {
+        font-size: 2rem;
+    }
+    .menu__button_mobile {
+        display: initial;
+        color: #295fa3;
+    }
+
+    .menu__button {
+        display: none;
+    }
+
+    .main {
+        flex-direction: column;
+        margin: 2rem 0;
+    }
+
+    .main__description {
+        margin: 1rem .1rem;
+        font-size: 1.3rem;
+    }
+    .title__main {
+        font-size: 3rem;
+    }
+    .logo__img {
+        display: none;
+    }
+
+    .main__image {
+        padding: 0
+    }
+    .menu-bar {
+        align-items: center;
+        padding: .5rem .5rem;
+        flex-direction: column;
+    }
+    .colour-code {
+        height: 30vw;
+    }
+    .colour-code p {
+        font-size: .8rem;
+    }
+
+    .demo__button {
+        align-self: center;
+    }
+
+}
