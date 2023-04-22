@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="styles.css">
 
         <!-- tab icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="img/genie.svg">
+        <link rel="icon" type="image/svg" sizes="16x16" href="img/icon_imgs/genie.svg">
 
         <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,12 +22,20 @@
     </head>
     <body>
         <header class="menu-bar">
-            <img class='logo__img' src="img/genie.svg"">
+            <img class='logo__img' src="img/icon_imgs/genie.svg"">
             <h1 class="title__main">Colour Genie</h1>
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                       <button class="button upload__button"> <label for="image__input" >Upload Image</label></button>
+                        
+                       <button class="button upload__button"> 
+                            <label for="image__input" >Upload Image</label>
+                            <input 
+                            class="input" 
+                            id="image__input" 
+                            type="file" 
+                            accept="image/*, .pdf">
+                        </button>
                     </li>
                     
 
@@ -55,18 +63,13 @@
 
             <div class="main__intro">
                 <h2 class="description__title"></h2>
-                <p class="main__description">Upload an image or demo our selection  to generate a colour palette</p>
-                <input 
-                class="input" 
-                id="image__input" 
-                type="file" 
-                accept="image/*, pdf">
+                <p class="main__description">Upload an image or demo our selection  to generate a colour palette</p>    
             </div>
 
             <div class="main__image">
 
                 <div class="image__preview">
-                    <img class="preview__file"src="img/flower.webp">
+                    <img class="preview__file"src="img/preview_imgs/flower.webp">
                 </div>
 
                 <div class="palette__preview">
@@ -82,6 +85,6 @@
 
 
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/7a65a08da4.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/7a65a08da4.js" crossorigin="anonymous"></script>  
     </body>
 </html>

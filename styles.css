@@ -47,15 +47,17 @@ img {
 
     /* animation */
     transform: translateZ(0);
-    transition: transform 0.25s ease-out;
-
+    transition: transform 0.25s ease-out, background-color .25s ease, color .25s ease;
 }
 
 .button:hover {
     transform: scale(1.05);
+}
+
+.button:active {
     background-color: #84e556;
     color: #295fa3;
-    font-weight: 800;
+
 }
 
 
@@ -141,10 +143,12 @@ body {
 .main__image {
     display: flex;
     flex-direction: column;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
+    flex-grow: 2;  
+
 }
 .image__preview {
-    
+      
 
 }
 
