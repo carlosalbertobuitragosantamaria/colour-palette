@@ -280,13 +280,12 @@ body {
     }
     
     .image__preview {
-
+        height: 50vh;
         max-width: 100%;
 
     }
 
     .palette__preview {
-        margin-top: 1rem;
     }
     
 }
