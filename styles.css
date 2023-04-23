@@ -189,6 +189,7 @@ body {
 .colour-code p {
     letter-spacing: .1rem ;
     font-weight: 400;
+    font-size: 60%;
 }
 
 .colour-code__dark {
@@ -211,6 +212,12 @@ body {
     background-color: #92238d;
 }
 .colour-code4 {
+    text-shadow: 1px 1px 8px #89ad78, -1px -1px 8px #89ad78;
+    background-color: #418820;
+    
+}
+
+.colour-code5 {
     text-shadow: 1px 1px 8px #997845, -1px -1px 8px #997845;
     background-color: #614312;
     border-radius: 0 0 8px 0;
@@ -220,7 +227,7 @@ body {
 
 
 /* //////////////// *** MOBILE VIEW *** //////////////////////// */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 720px) {
 
     .fa-solid {
         font-size: 2rem;
@@ -251,7 +258,8 @@ body {
     }
 
     .main__image {
-        padding: 0
+        padding: 0;
+
     }
     .menu-bar {
         align-items: center;
@@ -261,9 +269,10 @@ body {
     }
     .colour-code {
         height: 30vw;
+
     }
     .colour-code p {
-        font-size: .8rem;
+        /* font-size: 60%; */
     }
 
     .demo__button {
@@ -271,7 +280,13 @@ body {
     }
     
     .image__preview {
+
         max-width: 100%;
+
+    }
+
+    .palette__preview {
+        margin-top: 1rem;
     }
     
 }
