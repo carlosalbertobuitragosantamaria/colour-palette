@@ -125,13 +125,14 @@ body {
 
 .main {
     display: flex;
-    margin: 6rem 3rem;
+    margin: 1rem 3rem 5rem 3rem;
 }
 
 .main__intro {
     align-items: center;
     display: flex;
     margin-left: 1rem;
+    flex: 1;
 }
 .main__description {
     font-size: 2rem;
@@ -144,7 +145,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 1.5rem;
-    flex-grow: 2;  
+    flex: 1.5;  
 
 }
 .image__preview {
@@ -280,7 +281,7 @@ body {
     }
     
     .image__preview {
-        height: 50vh;
+        /* height: 60vh; */
         max-width: 100%;
 
     }
@@ -288,4 +289,11 @@ body {
     .palette__preview {
     }
     
+}
+
+@media screen and (max-width: 400px) {
+
+    .image__preview {
+        height: 50vh;
+    }
 }
