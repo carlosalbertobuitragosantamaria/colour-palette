@@ -19,6 +19,48 @@ sunMoonContainer.addEventListener('click', () => {
 })
 
 
+
+// const demoImgArray = [
+//     'img/preview_imgs/butterfly.webp',
+//     'img/preview_imgs/crypto.webp',
+//     'img/preview_imgs/forest.webp',
+//     'img/preview_imgs/strawberry.webp',
+//     'img/preview_imgs/sunset.webp',
+//     'img/preview_imgs/tucan.webp'
+// ]
+// let currentIndex = 0;
+// demoButton.addEventListener('click', event => {
+//     if (currentIndex < demoImgArray.length) {
+//         imagePreview.innerHTML = `<img class="preview__file"src="${demoImgArray[currentIndex]}">`;
+//         currentIndex ++;
+//     } else {
+//         currentIndex = 0;
+//         imagePreview.innerHTML = `<img class="preview__file"src="${demoImgArray[currentIndex]}">`;
+//         currentIndex ++;
+//     }
+// })
+
+//////////////// *** COLOR THIEF *** //////////////////////////
+
+
+// input.addEventListener('change', () => {
+//   const imgName = input.files;
+//   console.log(imgName)
+//   imagePreview.innerHTML = `<img class="preview__file"src="img/preview_imgs/${imgName}">`
+  
+//   const colorThief = new ColorThief();
+//   const img = document.querySelector('.preview__file');
+
+//   img.addEventListener('load', () => {
+//     const palette = colorThief.getPalette(img, 5);
+//     console.log(palette)
+//     palettePreview.innerHTML = palette.map(color => {
+//       const [r, g, b] = color;
+//       console.log(r)
+//       return `<div class="colour-code colour-code1" style="background-color: rgb(${r}, ${g}, ${b})"><p>rgb(${r}, ${g}, ${b})</p></div>`
+//     });
+//   })
+
 const rgbToHex = (r, g, b) => {
   return '#' + [r, g, b].map(x => {
     const hex = x.toString(16);
@@ -42,8 +84,10 @@ input.addEventListener('change', event => {
       const palette = colorThief.getPalette(previewFile, 5);
       palettePreview.innerHTML = palette.map(color => {
         const [r, g, b] = color;
-        return `<div class="colour-code" style="background-color: ${rgbToHex(r, g, b)}"><p>${rgbToHex(r, g, b).toUpperCase()}</p></div>`
-      }).join('')
+        return `<div class="colour-code" style="background-color: ${rgbToHex(r, g, b)}">
+                  <p>${rgbToHex(r, g, b).toUpperCase()}</p>
+                </div>`
+      }).join('');
     });
   };
 })
