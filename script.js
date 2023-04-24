@@ -1,25 +1,14 @@
-const sunMoonContainer = document.querySelector('.sun-moon__container');
-const sunIcon = document.querySelector('.sun__icon');
-const moonIcon = document.querySelector('.moon__icon');
 const body = document.querySelector('body'); 
 const colourCode = document.querySelectorAll('.colour-code p');
-
 const input = document.querySelector('.input');
 const imagePreview = document.querySelector('.image__preview');
 const palettePreview = document.querySelector('.palette__preview');
 const demoButton = document.querySelector('.demo__button');
+const buttons = document.querySelectorAll('.button');
+const titleMain = document.querySelector('.title__main');
 
 
-
-sunMoonContainer.addEventListener('click', () => {
-    moonIcon.classList.toggle('animate-moon');
-    sunIcon.classList.toggle('animate-sun');
-    body.classList.toggle('dark-mode');
-    colourCode.forEach(hex => hex.classList.toggle('colour-code__dark'))
-})
-
-
-
+/////////////////////////// *** DEMO PREVIEW *** ///////////////////////////////
 // const demoImgArray = [
 //     'img/preview_imgs/butterfly.webp',
 //     'img/preview_imgs/crypto.webp',
@@ -43,43 +32,29 @@ sunMoonContainer.addEventListener('click', () => {
 //////////////// *** COLOR THIEF *** //////////////////////////
 
 
-// input.addEventListener('change', () => {
-//   const imgName = input.files;
-//   console.log(imgName)
-//   imagePreview.innerHTML = `<img class="preview__file"src="img/preview_imgs/${imgName}">`
-  
-//   const colorThief = new ColorThief();
-//   const img = document.querySelector('.preview__file');
 
-//   img.addEventListener('load', () => {
-//     const palette = colorThief.getPalette(img, 5);
-//     console.log(palette)
-//     palettePreview.innerHTML = palette.map(color => {
-//       const [r, g, b] = color;
-//       console.log(r)
-//       return `<div class="colour-code colour-code1" style="background-color: rgb(${r}, ${g}, ${b})"><p>rgb(${r}, ${g}, ${b})</p></div>`
-//     });
-//   })
-
+//////////////////// *** RGB TO HEX FUNCTION *** ////////////////////
 const rgbToHex = (r, g, b) => {
   return '#' + [r, g, b].map(x => {
     const hex = x.toString(16);
     return hex.length === 1 ? '0' + hex : hex
-  }).join('')
+  }).join('');
 }
-console.log(rgbToHex(102, 51, 153))
 
+
+/////////////////////// *** COLORTHIEF *** /////////////////////////////////////
 input.addEventListener('change', event => {
   const imgSrc = event.target.files[0]
   const reader = new FileReader();
   const previewFile = document.querySelector('.preview__file')
+  const colorThief = new ColorThief({quality: 256, exponent: 3, min_color_ratio: 0.01});
   reader.readAsDataURL(imgSrc);
+
+  //////////////////// *** DO THE WORK AFTER IMG HAS LOADED *** ///////////////////////
   reader.onload = () => {
     previewFile.src = reader.result;
 
-    const colorThief = new ColorThief({quality: 256, exponent: 3});
-
-  
+    ////////////////// *** COLOUR PALETTE *** //////////////////////////////////////////
     previewFile.addEventListener('load', () => {
       const palette = colorThief.getPalette(previewFile, 5);
       palettePreview.innerHTML = palette.map(color => {
@@ -88,6 +63,18 @@ input.addEventListener('change', event => {
                   <p>${rgbToHex(r, g, b).toUpperCase()}</p>
                 </div>`
       }).join('');
+
+      ///////////////////// *** adding pallete do the website *** ////////////////////
+      const [color1, color2, color3, color4, color5] = palette;
+      const i = Math.floor(Math.random() *6);
+      let ii = Math.floor(Math.random() *6);
+      while ( i === ii) {
+        ii = Math.floor(Math.random() *6);
+      }
+      const indexA = i;
+      const indexB = ii;
+      buttons.forEach(button => button.style.backgroundColor = `rgb(${palette[indexA].join(',')})`);
+      titleMain.style.color = `rgb(${palette[indexB].join(',')})`;
     });
   };
 })
