@@ -149,8 +149,8 @@ body {
 
 }
 .image__preview {
-    max-width: 60vw;
-    max-height: 60vw;
+    /* max-width: 60vw;
+    max-height: 60vw; */
     object-fit: contain;
 
 }
@@ -278,22 +278,19 @@ body {
 
     .demo__button {
         align-self: center;
+
     }
     
     .image__preview {
-        /* height: 60vh; */
         max-width: 100%;
+
 
     }
 
     .palette__preview {
+
     }
     
 }
 
-@media screen and (max-width: 400px) {
 
-    .image__preview {
-        height: 50vh;
-    }
-}
