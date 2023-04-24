@@ -25,6 +25,7 @@ img {
 
 .logo__img {
     max-width: 6%;
+    background-color: black;
 }
 
 .title__main {
@@ -70,55 +71,11 @@ img {
     
 }
 /* /////////////// *** DARK MODE *** ///////////////// */
-.sun-moon__container {
-    position: relative;
-    cursor: pointer;
-}
-.fa-solid {
-    font-size: 2.5rem;
-}
-.sun-moon__icons {
-    color: #295fa3;
-
-}
 
 
 
-/* .moon__icon {
-    position: absolute;
-} */
 
-.sun__icon {
-    opacity: 0;
-    transform: translateY(-10%) translateX(10%) rotateZ(80deg);
-    transition: all 1s ease-out;
-}
 
-.moon__icon {
-    position: absolute;
-    opacity: 1;
-    transform: translateY(0) rotateZ(0deg);
-    transition: all 1s ease-out;
-}
-
-.animate-moon {
-    opacity: 0;
-    transform: translateY(20%) rotateZ(100deg);
-}
-
-.animate-sun {
-    opacity: 1;
-    transform: translateY(0%) rotateZ(0deg);
-}
-
-body {
-    transition: background-color 1s;
-}
-
-.dark-mode {
-    background-color: #2f3033;
-    color: #F0F0F0;
-}
 
 
 /* /////////////// *** MAIN *** //////////////// */
@@ -180,11 +137,13 @@ body {
 }
 
 .colour-code {
+    /* flex-basis: calc(20%); */
     flex-grow: 1;
     padding-left: .5rem;
     height: 10vw;
     display: flex;
     align-items: flex-end;
+
 }
 
 .colour-code p {
@@ -282,13 +241,13 @@ body {
     }
     
     .image__preview {
-        max-width: 100%;
+
 
 
     }
 
     .palette__preview {
-
+        /* flex-wrap: wrap; */
     }
     
 }
